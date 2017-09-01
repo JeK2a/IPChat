@@ -83,16 +83,16 @@ public class ChatClientWin {
             try {
                 new Settings();  // подключить первональные настройки
 
-                InetAddress address = InetAddress.getByName(Settings.SERVER_PC); // получение адреса сервера в сети
-                Socket socket = new Socket(address, Settings.PORT); // открытия соета для связи с сервером
+                InetAddress address = InetAddress.getByName(Settings.getServerPc()); // получение адреса сервера в сети
+                Socket socket = new Socket(address, Settings.getPort()); // открытия соета для связи с сервером
 
                 whoIm = InetAddress.getLocalHost().getHostName() + " - " + InetAddress.getLocalHost().getHostAddress();
 
                 outputStream = new ObjectOutputStream(socket.getOutputStream()); // создание потока для отправки сообщение на сервер
                 new Thread(new ClientInWin(socket)).start();  // Создание потока для входящих сообщений с сервера
 
-                System.out.println(Settings.SERVER_PC); // вывод на экран название ПК сервера
-                System.out.println(Settings.PORT); // вывод на экран порт ПК сервера
+                System.out.println(Settings.getServerPc()); // вывод на экран название ПК сервера
+                System.out.println(Settings.getPort()); // вывод на экран порт ПК сервера
                 System.out.println("address = " + address); // вывод на экран адреса
                 System.out.println("socket = " + socket); // вывод на экран сокета
             } catch (IOException e) {

@@ -11,7 +11,7 @@ class SocketThread implements Runnable {
     private Message message = null;
     private ObjectInputStream inputStream = null;
     private ObjectOutputStream outputStream = null;
-    static int clients = 0;
+    private static int clients = 0;
 
     SocketThread(Socket socket) { this.SOCKET = socket; } // Конструктор
 
