@@ -57,13 +57,13 @@ class ChatServer extends JFrame {
 
     public static void main(String[] args) {
         new Settings();
-        new ChatServer("IPChatServer V4.3");
+        new ChatServer("IPChatServer V5.1");
 
-        try (ServerSocket serverSocket = new ServerSocket(Settings.PORT)) {
+        try (ServerSocket serverSocket = new ServerSocket(Settings.getPort())) {
             enterMessage("Server starting...");
 
             while(true) {
-                if (SocketThread.clients <= Settings.SIZE_MAX_CLIENTS) {
+                if (SocketThread.clients <= Settings.getSizeMaxClients()) {
                     new Thread(new SocketThread(serverSocket.accept())).start(); // Созлание нового потока на сервере
                 } else {
                     enterMessage("Превышено максимальное количество пользователей!");

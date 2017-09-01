@@ -14,7 +14,7 @@ class ClientInWeb implements Runnable {
             try {
                 ObjectInputStream objectInputStream = new ObjectInputStream(socket.getInputStream());
                 Message message = (Message) objectInputStream.readObject();
-                ChatClientApplet.textArea.append(String.valueOf(message) + "\n");
+                ChatClientApplet.addMessage(message);
             } catch (IOException | ClassNotFoundException e) {
                 System.err.println(e);
             }

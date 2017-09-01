@@ -5,13 +5,17 @@ import javax.xml.parsers.DocumentBuilderFactory;
 import javax.xml.parsers.ParserConfigurationException;
 import java.io.File;
 import java.io.IOException;
-import java.net.URL;
 
 class Settings {
-    static int PORT;
-    static String SERVER_PC;
-    static int SIZE_HISTORY;
-    static int SIZE_MAX_CLIENTS;
+    private static int port = 0;
+    private static String serverPc;
+    private static int sizeHistory;
+    private static int sizeMaxClients;
+
+    static int getPort() { return port; }
+    static String getServerPc() { return serverPc; }
+    static int getSizeHistory() { return sizeHistory; }
+    static int getSizeMaxClients() { return sizeMaxClients; }
 
     Settings() {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
@@ -40,16 +44,16 @@ class Settings {
 
                 switch (childElement.getTagName()) {
                     case "port":
-                        PORT = Integer.parseInt(text);
+                        port = Integer.parseInt(text);
                         break;
                     case "server_pc":
-                        SERVER_PC = text;
+                        serverPc = text;
                         break;
                     case "size_history":
-                        SIZE_HISTORY = Integer.parseInt(text);
+                        sizeHistory = Integer.parseInt(text);
                         break;
                     case "size_max_clients":
-                        SIZE_MAX_CLIENTS = Integer.parseInt(text);
+                        sizeMaxClients = Integer.parseInt(text);
                         break;
                 }
             }
