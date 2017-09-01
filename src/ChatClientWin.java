@@ -35,7 +35,6 @@ public class ChatClientWin {
                 }
             });
             add(okB, BorderLayout.EAST);
-
             pack();
             setVisible(true);
         }
