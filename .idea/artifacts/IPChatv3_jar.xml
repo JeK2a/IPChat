@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="IPChatv3:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/IPChatv3_jar</output-path>
+    <root id="archive" name="IPChatv3.jar">
+      <element id="module-output" name="IPChatv3" />
+    </root>
+  </artifact>
+</component>
