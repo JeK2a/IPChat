@@ -15,6 +15,10 @@ class SocketThread implements Runnable {
 
     SocketThread(Socket socket) { this.SOCKET = socket; } // Конструктор
 
+    public static int getClients() {
+        return clients;
+    }
+
     @Override
     public void run() {
         // старт серверного потока

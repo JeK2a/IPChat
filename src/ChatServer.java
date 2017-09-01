@@ -63,7 +63,7 @@ class ChatServer extends JFrame {
             enterMessage("Server starting...");
 
             while(true) {
-                if (SocketThread.clients <= Settings.getSizeMaxClients()) {
+                if (SocketThread.getClients() <= Settings.getSizeMaxClients()) {
                     new Thread(new SocketThread(serverSocket.accept())).start(); // Созлание нового потока на сервере
                 } else {
                     enterMessage("Превышено максимальное количество пользователей!");

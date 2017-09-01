@@ -8,41 +8,31 @@ class AddToMySQL {
     private static final String user = "root";
     private static final String password = "nokia3510";
 
-    // JDBC variables for opening and managing connection
-    private static Connection connection;
-    private static Statement statement;
-
-    private Date date;
-    private String name;
-    private String text;
-    private String namePCAndIP;
-    private String status;
-
-    AddToMySQL(Message message) {
-        this.date = message.getDate();
-        this.name = message.getName();
-        this.text = message.getText();
-        this.namePCAndIP = message.getNamePCAndIP();
-        this.status = message.getStatus();
-
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyyMMddHHmmss");
+    static void addMessageToMySQL(Message message) {
+        Date date = message.getDate();
+        String name = message.getName();
+        String text = message.getText();
+        String namePCAndIP = message.getNamePCAndIP();
+        String status = message.getStatus();
 
         try {
-            // opening database connection to MySQL server
-            connection = DriverManager.getConnection(url, user, password);
+            Class.forName("com.mysql.jdbc.Driver");
+            Connection connection = DriverManager.getConnection(url, user, password); // opening database connection to MySQL server
 
-            // getting Statement object to execute query
-            statement = connection.createStatement();
+            if (connection == null) {
+                System.out.println("Нет соединения с БД!");
+                System.exit(0);
+            }
 
-            System.out.println(simpleDateFormat.format(date));
+            Statement statement = connection.createStatement(); // getting Statement object to execute query
 
             // executing SELECT query
             String query = "INSERT INTO myshema.message (date, name, text, namePCAndIP, status) \n" +
-                    " VALUES (\'" + simpleDateFormat.format(date) + "\', \'" + name +
-                    "\', \'" + text + "\', \'" + namePCAndIP + "\', \'" + status + "\');";
+                        " VALUES (\'" + new SimpleDateFormat("yyyyMMddHHmmss").format(date) +
+                        "\', \'" + name + "\', \'" + text + "\', \'" + namePCAndIP + "\', \'" + status + "\');";
             statement.executeUpdate(query);
-        } catch (SQLException sqlEx) {
-            System.err.println(sqlEx);
+        } catch(SQLException | ClassNotFoundException e){
+             System.err.println(e);
         }
     }
 }
