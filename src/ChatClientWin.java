@@ -46,7 +46,7 @@ public class ChatClientWin {
         private String whoIm = "";
 
         MainFrame() {
-            super("IPChatClient V4.2");
+            super("IPChatClient V4.3");
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
             this.addWindowListener(new WindowListener() {
@@ -98,6 +98,7 @@ public class ChatClientWin {
             } catch (IOException e) {
                 System.err.println(e);
             }
+
             // Создание графической части клиента
             textArea = new JTextArea(20, 30);
             textArea.setEditable(false);

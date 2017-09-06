@@ -7,7 +7,7 @@ import java.io.File;
 import java.io.IOException;
 
 class Settings {
-    private static int port = 0;
+    private static int port;
     private static String serverPc;
     private static int sizeHistory;
     private static int sizeMaxClients;
@@ -43,18 +43,10 @@ class Settings {
                 String text = textNode.getData().trim();
 
                 switch (childElement.getTagName()) {
-                    case "port":
-                        port = Integer.parseInt(text);
-                        break;
-                    case "server_pc":
-                        serverPc = text;
-                        break;
-                    case "size_history":
-                        sizeHistory = Integer.parseInt(text);
-                        break;
-                    case "size_max_clients":
-                        sizeMaxClients = Integer.parseInt(text);
-                        break;
+                    case "port": port = Integer.parseInt(text); break;
+                    case "server_pc": serverPc = text; break;
+                    case "size_history": sizeHistory = Integer.parseInt(text); break;
+                    case "size_max_clients": sizeMaxClients = Integer.parseInt(text); break;
                 }
             }
         }

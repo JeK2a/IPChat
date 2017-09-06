@@ -10,7 +10,6 @@ class SocketThread implements Runnable {
     private static ArrayList<Socket> listSocket = new ArrayList<>();
     private Message message = null;
     private ObjectInputStream inputStream = null;
-    private ObjectOutputStream outputStream = null;
     private static int clients = 0;
 
     SocketThread(Socket socket) { this.SOCKET = socket; } // Конструктор
@@ -23,14 +22,15 @@ class SocketThread implements Runnable {
     public void run() {
         // старт серверного потока
         try {
-            ChatServer.enterMessage("User connect...");
             clients++; // Увеличение количество клиентов
             listSocket.add(SOCKET); // Добавление сокета в общий список
             inputStream = new ObjectInputStream(SOCKET.getInputStream()); // Создание постоянного одинночного входного потока
+            ChatServer.enterMessage("User connect...");
         } catch (IOException ex) {
             System.err.println(ex);
         }
         // отправка новому клиенту истории чата
+        ObjectOutputStream outputStream;
         try {
             for (Message m : ChatHistory.getList()) { // Перебор всех сообщейний из списка
                 outputStream = new ObjectOutputStream(SOCKET.getOutputStream()); // Получение исходящего потока из сокета
@@ -45,6 +45,7 @@ class SocketThread implements Runnable {
             try {
                 message = (Message) inputStream.readObject(); // Прием сообщение с постоянного входящего потока
                 ChatHistory.add(message); // Добавление сообщения в историю
+                AddToMySQL.addMessageToMySQL(message); // Добавление сообщения в базу
                 // Окончание работы потока
                 if (message.getText().contains("END")) {
                     listSocket.remove(SOCKET);

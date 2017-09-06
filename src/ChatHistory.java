@@ -8,7 +8,6 @@ class ChatHistory {
             list.remove(0); // Удаление самого старого сообщения
         }
         list.add(message); // Добавление нового сообщения в историю
-        AddToMySQL.addMessageToMySQL(message);
     }
 
     static ArrayList<Message> getList() {

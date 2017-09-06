@@ -50,14 +50,14 @@ class ChatServer extends JFrame {
         });
     }
 
-    static void enterMessage(String t) {
-        System.out.println(t);
-        textArea.append(t + "\n");
+    static void enterMessage(String text) {
+        System.out.println(text);
+        textArea.append(text + "\n");
     }
 
     public static void main(String[] args) {
         new Settings();
-        new ChatServer("IPChatServer V5.1");
+        new ChatServer("IPChatServer V4.3");
 
         try (ServerSocket serverSocket = new ServerSocket(Settings.getPort())) {
             enterMessage("Server starting...");
