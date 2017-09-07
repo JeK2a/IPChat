@@ -1,15 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37c4c173-d63b-4187-8501-56f3cc44f429" name="Default" comment="Корректировка кода">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterPath="" />
+    <list default="true" id="37c4c173-d63b-4187-8501-56f3cc44f429" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configChat.xml" afterPath="$PROJECT_DIR$/configChat.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatClientApplet.java" afterPath="$PROJECT_DIR$/src/ChatClientApplet.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatClientWin.java" afterPath="$PROJECT_DIR$/src/ChatClientWin.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatServer.java" afterPath="$PROJECT_DIR$/src/ChatServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Settings.java" afterPath="$PROJECT_DIR$/src/Settings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/SocketThread.java" afterPath="$PROJECT_DIR$/src/SocketThread.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -367,7 +360,7 @@
       <workItem from="1504266895864" duration="1542000" />
       <workItem from="1504601584453" duration="618000" />
       <workItem from="1504724330058" duration="5557000" />
-      <workItem from="1504773097311" duration="7275000" />
+      <workItem from="1504773097311" duration="7339000" />
     </task>
     <task id="LOCAL-00001" summary="Изменение">
       <created>1504261309214</created>
@@ -404,11 +397,18 @@
       <option name="project" value="LOCAL" />
       <updated>1504728378486</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Инкапсулированы настройки">
+      <created>1504819511848</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1504819511848</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24931000" />
+    <option name="totallyTimeSpent" value="24995000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -421,7 +421,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32962137" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -488,7 +487,8 @@
     <MESSAGE value="Изменение" />
     <MESSAGE value="Была исправлена ошибка, из-за которой не удавалось подгрузить класс JDBC" />
     <MESSAGE value="Корректировка кода" />
-    <option name="LAST_COMMIT_MESSAGE" value="Корректировка кода" />
+    <MESSAGE value="Инкапсулированы настройки" />
+    <option name="LAST_COMMIT_MESSAGE" value="Инкапсулированы настройки" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
