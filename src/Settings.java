@@ -12,12 +12,27 @@ class Settings {
     private static int sizeHistory;
     private static int sizeMaxClients;
 
-    static int getPort() { return port; }
-    static String getServerPc() { return serverPc; }
-    static int getSizeHistory() { return sizeHistory; }
-    static int getSizeMaxClients() { return sizeMaxClients; }
+    static int getPort() {
+        openFileXML();
+        return port;
+    }
 
-    Settings() {
+    static String getServerPc() {
+        openFileXML();
+        return serverPc;
+    }
+
+    static int getSizeHistory() {
+        openFileXML();
+        return sizeHistory;
+    }
+
+    static int getSizeMaxClients() {
+        openFileXML();
+        return sizeMaxClients;
+    }
+
+    static void openFileXML() {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         Document doc = null;
         try {

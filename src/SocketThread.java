@@ -10,19 +10,17 @@ class SocketThread implements Runnable {
     private static ArrayList<Socket> listSocket = new ArrayList<>();
     private Message message = null;
     private ObjectInputStream inputStream = null;
-    private static int clients = 0;
+    private static int clientsColvo = 0;
 
     SocketThread(Socket socket) { this.SOCKET = socket; } // Конструктор
 
-    static int getClients() {
-        return clients;
-    }
+    static int getClientsColvo() { return clientsColvo; }
 
     @Override
     public void run() {
         // старт серверного потока
         try {
-            clients++; // Увеличение количество клиентов
+            clientsColvo++; // Увеличение количество клиентов
             listSocket.add(SOCKET); // Добавление сокета в общий список
             inputStream = new ObjectInputStream(SOCKET.getInputStream()); // Создание постоянного одинночного входного потока
             ChatServer.enterMessage("User connect...");
@@ -50,7 +48,7 @@ class SocketThread implements Runnable {
                 if (message.getText().contains("END")) {
                     listSocket.remove(SOCKET);
                     ChatServer.enterMessage("User disconnect...");
-                    clients--;
+                    clientsColvo--;
                     return;
                 }
             } catch (IOException | ClassNotFoundException e) {

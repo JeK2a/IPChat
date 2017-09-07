@@ -12,7 +12,7 @@ public class ChatClientWin {
 
     private static JTextArea textArea;
     private static JTextField textEnter;
-    private static String name = null;
+    private static String name = "anonim";
 
     static void addMessage(Message message) {
         textArea.append(String.valueOf(message) + "\n");
@@ -49,40 +49,7 @@ public class ChatClientWin {
             super("IPChatClient V4.3");
             setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
-            this.addWindowListener(new WindowListener() {
-                @Override
-                public void windowOpened(WindowEvent e) { }
-
-                @Override
-                public void windowClosing(WindowEvent e) {
-                    try {
-                        outputStream.writeObject(new Message(new Date(), name, "END", whoIm, "offline")); // отправка на сервер данных, что клиент отключился
-                        outputStream.flush(); // проталкивание буфера
-                    } catch (IOException e1) {
-                        System.err.println(e1);
-                    }
-                    System.exit(0);
-                }
-
-                @Override
-                public void windowClosed(WindowEvent e) { }
-
-                @Override
-                public void windowIconified(WindowEvent e) { }
-
-                @Override
-                public void windowDeiconified(WindowEvent e) { }
-
-                @Override
-                public void windowActivated(WindowEvent e) { }
-
-                @Override
-                public void windowDeactivated(WindowEvent e) { }
-            });
-
             try {
-                new Settings();  // подключить первональные настройки
-
                 InetAddress address = InetAddress.getByName(Settings.getServerPc()); // получение адреса сервера в сети
                 Socket socket = new Socket(address, Settings.getPort()); // открытия соета для связи с сервером
 
@@ -114,8 +81,6 @@ public class ChatClientWin {
 
             setVisible(true);
 
-            new EnterNameDialog(null);
-
             textEnter.addActionListener(e -> {
                 if (!textEnter.getText().equals("")) {
                     try {
@@ -129,10 +94,41 @@ public class ChatClientWin {
             });
             pack();
             textEnter.requestFocus(true);
+
+            this.addWindowListener(new WindowListener() {
+                @Override
+                public void windowOpened(WindowEvent e) { }
+
+                @Override
+                public void windowClosing(WindowEvent e) {
+                    try {
+                        outputStream.writeObject(new Message(new Date(), name, "END", whoIm, "offline")); // отправка на сервер данных, что клиент отключился
+                        outputStream.flush(); // проталкивание буфера
+                    } catch (IOException e1) {
+                        System.err.println(e1);
+                    }
+                    System.exit(0);
+                }
+
+                @Override
+                public void windowClosed(WindowEvent e) { }
+
+                @Override
+                public void windowIconified(WindowEvent e) { }
+
+                @Override
+                public void windowDeiconified(WindowEvent e) { }
+
+                @Override
+                public void windowActivated(WindowEvent e) { }
+
+                @Override
+                public void windowDeactivated(WindowEvent e) { }
+            });
         }
     }
 
     public static void main(String[] args) {
-        new MainFrame();
+        new EnterNameDialog(new MainFrame());
     }
 }

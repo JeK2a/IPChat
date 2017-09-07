@@ -31,7 +31,7 @@ public class ChatClientApplet extends Applet implements ActionListener {
         textEnter.requestFocus(); // Установить фокус на панель ввода
 
         try {
-            new Settings();  // подключить первональные настройки
+            //new Settings();  // подключить первональные настройки
 
             InetAddress address = InetAddress.getByName(Settings.getServerPc()); // получение адреса сервера в сети
             Socket socket = new Socket(address, Settings.getPort()); // открытия соета для связи с сервером
