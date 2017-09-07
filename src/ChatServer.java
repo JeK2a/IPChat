@@ -11,19 +11,6 @@ class ChatServer extends JFrame {
     private ChatServer(String s) {
         super(s);
         setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-
-        textArea = new JTextArea(20, 30);
-        textArea.setEditable(false);
-
-        JScrollPane scrollPane = new JScrollPane(textArea);
-        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
-        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
-        setPreferredSize(new Dimension(450, 450));
-        add(scrollPane);
-
-        setVisible(true);
-        pack();
-
         this.addWindowListener(new WindowListener() {
             @Override
             public void windowOpened(WindowEvent e) { }
@@ -48,22 +35,33 @@ class ChatServer extends JFrame {
             @Override
             public void windowDeactivated(WindowEvent e) { }
         });
+
+        textArea = new JTextArea(20, 30);
+        textArea.setEditable(false);
+
+        JScrollPane scrollPane = new JScrollPane(textArea);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_AS_NEEDED);
+        setPreferredSize(new Dimension(450, 450));
+        add(scrollPane);
+
+        setVisible(true);
+        pack();
     }
 
-    static void enterMessage(String t) {
-        System.out.println(t);
-        textArea.append(t + "\n");
+    static void enterMessage(String text) {
+        System.out.println(text);
+        textArea.append(text + "\n");
     }
 
     public static void main(String[] args) {
-        new Settings();
-        new ChatServer("IPChatServer V5.1");
+        new ChatServer("IPChatServer V4.3");
 
         try (ServerSocket serverSocket = new ServerSocket(Settings.getPort())) {
             enterMessage("Server starting...");
 
             while(true) {
-                if (SocketThread.clients <= Settings.getSizeMaxClients()) {
+                if (SocketThread.getClientsColvo() <= Settings.getSizeMaxClients()) {
                     new Thread(new SocketThread(serverSocket.accept())).start(); // Созлание нового потока на сервере
                 } else {
                     enterMessage("Превышено максимальное количество пользователей!");

@@ -7,17 +7,32 @@ import java.io.File;
 import java.io.IOException;
 
 class Settings {
-    private static int port = 0;
+    private static int port;
     private static String serverPc;
     private static int sizeHistory;
     private static int sizeMaxClients;
 
-    static int getPort() { return port; }
-    static String getServerPc() { return serverPc; }
-    static int getSizeHistory() { return sizeHistory; }
-    static int getSizeMaxClients() { return sizeMaxClients; }
+    static int getPort() {
+        openFileXML();
+        return port;
+    }
 
-    Settings() {
+    static String getServerPc() {
+        openFileXML();
+        return serverPc;
+    }
+
+    static int getSizeHistory() {
+        openFileXML();
+        return sizeHistory;
+    }
+
+    static int getSizeMaxClients() {
+        openFileXML();
+        return sizeMaxClients;
+    }
+
+    static void openFileXML() {
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         Document doc = null;
         try {
@@ -43,18 +58,10 @@ class Settings {
                 String text = textNode.getData().trim();
 
                 switch (childElement.getTagName()) {
-                    case "port":
-                        port = Integer.parseInt(text);
-                        break;
-                    case "server_pc":
-                        serverPc = text;
-                        break;
-                    case "size_history":
-                        sizeHistory = Integer.parseInt(text);
-                        break;
-                    case "size_max_clients":
-                        sizeMaxClients = Integer.parseInt(text);
-                        break;
+                    case "port": port = Integer.parseInt(text); break;
+                    case "server_pc": serverPc = text; break;
+                    case "size_history": sizeHistory = Integer.parseInt(text); break;
+                    case "size_max_clients": sizeMaxClients = Integer.parseInt(text); break;
                 }
             }
         }

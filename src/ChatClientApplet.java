@@ -23,7 +23,6 @@ public class ChatClientApplet extends Applet implements ActionListener {
 
     @Override
     public void init() {
-        Socket socket;
         textArea.setEditable(false); // сделать неактивной для редактирования область вывода
         textArea.append("Enter you name:");
         add(textArea); // добавить область вывода
@@ -32,10 +31,10 @@ public class ChatClientApplet extends Applet implements ActionListener {
         textEnter.requestFocus(); // Установить фокус на панель ввода
 
         try {
-            new Settings();  // подключить первональные настройки
+            //new Settings();  // подключить первональные настройки
 
             InetAddress address = InetAddress.getByName(Settings.getServerPc()); // получение адреса сервера в сети
-            socket = new Socket(address, Settings.getPort()); // открытия соета для связи с сервером
+            Socket socket = new Socket(address, Settings.getPort()); // открытия соета для связи с сервером
 
             whoIm = InetAddress.getLocalHost().getHostName() + " - " + InetAddress.getLocalHost().getHostAddress();
 
