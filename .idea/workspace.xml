@@ -1,13 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="37c4c173-d63b-4187-8501-56f3cc44f429" name="Default" comment="Инкапсулированы настройки">
+    <list default="true" id="37c4c173-d63b-4187-8501-56f3cc44f429" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/TestAddToMySQL.java" afterPath="$PROJECT_DIR$/Test/TestAddToMySQL.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/TestAll.java" afterPath="$PROJECT_DIR$/Test/TestAll.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/TestMessage.java" afterPath="$PROJECT_DIR$/Test/TestMessage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Test/TestSettings.java" afterPath="$PROJECT_DIR$/Test/TestSettings.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/configChat.xml" afterPath="$PROJECT_DIR$/configChat.xml" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -434,7 +429,7 @@
       <workItem from="1504601584453" duration="618000" />
       <workItem from="1504724330058" duration="5557000" />
       <workItem from="1504773097311" duration="7343000" />
-      <workItem from="1505490739708" duration="9052000" />
+      <workItem from="1505490739708" duration="9064000" />
     </task>
     <task id="LOCAL-00001" summary="Изменение">
       <created>1504261309214</created>
@@ -492,11 +487,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505502429328</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Инкапсулированы настройки">
+      <created>1505504056467</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1505504056467</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34051000" />
+    <option name="totallyTimeSpent" value="34063000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
