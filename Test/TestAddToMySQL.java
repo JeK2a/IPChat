@@ -7,7 +7,7 @@ class TestAddToMySQL {
     private static final String user = "root";
     private static final String password = "nokia3510";
 
-    public static void test() {
+    static void test() {
         AddToMySQL.addMessageToMySQL(new Message(new Date(), "JeK2aTest", "testText", "testPC", "test"));
         System.out.println("TestAddToMySQL 1 Все ок!");
 
