@@ -1,9 +1,7 @@
 <application>
   <component name="libraryTable">
     <library name="mysql-connector-java-5.1.9">
-      <CLASSES>
-        <root url="jar://I:/Java/GitHub/IPChat/mysql-connector-java-5.1.9.jar!/" />
-      </CLASSES>
+      <CLASSES />
       <JAVADOC />
       <SOURCES />
     </library>
