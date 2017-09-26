@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="383299c3-eb9b-438e-991f-56b077c48549" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/ChatServer.java" afterPath="$PROJECT_DIR$/src/ChatServer.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/Message.java" afterPath="$PROJECT_DIR$/src/Message.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -390,7 +388,7 @@
       <option name="presentableId" value="Default" />
       <updated>1505931694316</updated>
       <workItem from="1505931696206" duration="3475000" />
-      <workItem from="1506444729285" duration="1156000" />
+      <workItem from="1506444729285" duration="1178000" />
     </task>
     <task id="LOCAL-00001" summary="Восстановление после и исправление ошибок после критического слета.">
       <created>1505933121134</created>
@@ -406,11 +404,18 @@
       <option name="project" value="LOCAL" />
       <updated>1505933130951</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Восстановление после и исправление ошибок после критического слета.">
+      <created>1506446150105</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1506446150105</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="4631000" />
+    <option name="totallyTimeSpent" value="4653000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1912" y="-8" width="1936" height="1096" extended-state="6" />
