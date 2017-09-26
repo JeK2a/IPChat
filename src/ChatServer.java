@@ -16,9 +16,7 @@ class ChatServer extends JFrame {
             public void windowOpened(WindowEvent e) { }
 
             @Override
-            public void windowClosing(WindowEvent e) {
-                System.exit(0);
-            }
+            public void windowClosing(WindowEvent e) { System.exit(0); }
 
             @Override
             public void windowClosed(WindowEvent e) { }

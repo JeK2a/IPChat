@@ -19,6 +19,30 @@ class Message implements Serializable {
         this.status = status;
     }
 
+    Message(String name, String text) {
+        this.date = new Date();
+        this.name = name;
+        this.text = text;
+        this.namePCAndIP = null;
+        this.status = null;
+    }
+
+    Message(String name, String text, String status) {
+        this.date = new Date();
+        this.name = name;
+        this.text = text;
+        this.namePCAndIP = null;
+        this.status = status;
+    }
+
+    Message(Message message) {
+        this.date = message.getDate();
+        this.name = message.getName();
+        this.text = message.getText();
+        this.namePCAndIP = message.getNamePCAndIP();
+        this.status = message.getStatus();
+    }
+
     Date getDate() { return date; }
 
     String getName() { return name; }
@@ -30,6 +54,8 @@ class Message implements Serializable {
     String getNamePCAndIP() { return namePCAndIP; }
 
     String getStatus() { return status; }
+
+    void setStatus(String status) { this.status = status; }
 
     @Override
     public String toString() { return  name + ": " + text + " - " + new SimpleDateFormat("HH:mm:ss").format(date); }
