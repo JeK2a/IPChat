@@ -1,0 +1,9 @@
+<toolSet name="External Tools">
+  <tool name="Run" showInMainMenu="true" showInEditor="true" showInProject="true" showInSearchPopup="true" disabled="false" useConsole="true" showConsoleOnStdOut="false" showConsoleOnStdErr="false" synchronizeAfterRun="true">
+    <exec>
+      <option name="COMMAND" value="C:\lib\java_habrahabr-master\simple_java_web.iml" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="C:/lib/java_habrahabr-master/src/main/java" />
+    </exec>
+  </tool>
+</toolSet>
