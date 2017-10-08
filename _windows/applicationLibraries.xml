@@ -1,5 +1,20 @@
 <application>
   <component name="libraryTable">
+    <library name="Java EE 6-Java EE 6">
+      <CLASSES>
+        <root url="jar://C:/lib/hibernateentitymanager/lib/javax.ejb.jar!/" />
+        <root url="jar://C:/lib/hibernateentitymanager/lib/javax.jms.jar!/" />
+        <root url="jar://C:/lib/hibernateentitymanager/lib/javax.persistence.jar!/" />
+        <root url="jar://C:/lib/hibernateentitymanager/lib/javax.annotation.jar!/" />
+        <root url="jar://C:/lib/hibernateentitymanager/lib/javax.transaction.jar!/" />
+        <root url="jar://C:/lib/hibernateentitymanager/lib/javax.resource.jar!/" />
+        <root url="jar://C:/lib/hibernateentitymanager/lib/javax.servlet.jsp.jstl.jar!/" />
+        <root url="jar://C:/lib/hibernateentitymanager/lib/javax.servlet.jsp.jar!/" />
+        <root url="jar://C:/lib/hibernateentitymanager/lib/javax.servlet.jar!/" />
+      </CLASSES>
+      <JAVADOC />
+      <SOURCES />
+    </library>
     <library name="mysql-connector-java-5.1.9">
       <CLASSES />
       <JAVADOC />
