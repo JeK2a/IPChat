@@ -1,5 +1,6 @@
 <application>
   <component name="CodeInsightSettings">
+    <option name="SHOW_SOURCE_INFERRED_ANNOTATIONS" value="false" />
     <EXCLUDED_PACKAGE NAME="TestAddToMySQL" />
   </component>
 </application>
